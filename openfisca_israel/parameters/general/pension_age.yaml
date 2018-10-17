@@ -3,12 +3,12 @@ metadata:
   reference: https://github.com/ServiceInnovationLab/Piccolo/issues/4
   unit: year
 
-women:
+woman:
   description: "Pension eligibility age for women"
   values:
     2018-01-01:
       value: 62
-men:
+man:
   description: "Pension eligibility age for men"
   values:
     2018-01-01:
