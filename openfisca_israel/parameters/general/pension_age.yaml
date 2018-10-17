@@ -7,9 +7,9 @@ women:
   description: "Pension eligibility age for women"
   values:
     2018-01-01:
-      value: 150
+      value: 62
 men:
   description: "Pension eligibility age for men"
   values:
     2018-01-01:
-      value: 150
+      value: 67
