@@ -40,6 +40,13 @@ class age(Variable):
         return (period.start.year - birth_year) - where(is_birthday_past, 0, 1)
 
 
+class Gender(Enum):
+    __order__ = "woman man"
+    woman = u'Woman'
+    man = u'Man'
+    unspecified = u'Unspecified'
+
+
 class gender(Variable):
     value_type = Enum
     possible_values = Gender
@@ -48,9 +55,3 @@ class gender(Variable):
     definition_period = MONTH
     label = u"A Person's gender"
 
-
-class Gender(Enum):
-    __order__ = "woman man"
-    woman = u'Woman'
-    man = u'Man'
-    unspecified = u'Unspecified'
