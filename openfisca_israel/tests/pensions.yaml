@@ -5,12 +5,18 @@
   period: 2018-01
   input_variables:
     gender: woman
+    pension_contributing_years: 22
   output_variables:
+    eligible_for_pension: 1
     pension_eligibility_age: 62
 
 - name: Pension for men
   period: 2018-01
   input_variables:
     gender: man
+    pension_contributing_years: 22
   output_variables:
+    eligible_for_pension: 1
     pension_eligibility_age: 67
+
+

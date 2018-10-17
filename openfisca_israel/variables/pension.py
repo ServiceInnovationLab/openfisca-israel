@@ -10,6 +10,20 @@ from openfisca_core.model_api import *
 from openfisca_israel.entities import *
 
 
+class eligible_for_pension(Variable):
+    value_type = bool
+    entity = Person
+    definition_period = MONTH
+    label = "Eligiblity for pension"
+    reference = "https://github.com/ServiceInnovationLab/Piccolo/issues/4"
+
+    def formula(person, period, parameters):
+        years_required = parameters(period).general.pension_contribution_years
+        years_contributed = person('pension_contributing_years', period)
+
+        return years_contributed >= years_required
+
+
 class pension_eligibility_age(Variable):
     value_type = int
     entity = Person
@@ -17,8 +31,14 @@ class pension_eligibility_age(Variable):
     label = "Age of eligiblity for pension"
     reference = "https://github.com/ServiceInnovationLab/Piccolo/issues/4"
 
-    # Since Dec 1st 2016, the basic income is provided to any adult, without considering their income.
     def formula(person, period, parameters):
+        # One must have paid contributions for at least 12 years
         gender = person('gender', period)
         return parameters(period).general.pension_age[gender]
 
+
+class pension_contributing_years(Variable):
+    value_type = int
+    entity = Person
+    definition_period = MONTH
+    label = "Number of years contributing towards the pension"

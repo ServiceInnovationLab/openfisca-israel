@@ -1,0 +1,6 @@
+description: Required number of years contributing
+metadata:
+  unit: year
+values:
+  2018-01-01:
+    value: 12
