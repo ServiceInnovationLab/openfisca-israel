@@ -6,8 +6,9 @@
   input_variables:
     gender: woman
     pension_contributing_years: 22
+    is_resident: true
   output_variables:
-    eligible_for_pension: 1
+    eligible_for_pension: true
     pension_eligibility_age: 62
 
 - name: Pension for men
@@ -15,8 +16,24 @@
   input_variables:
     gender: man
     pension_contributing_years: 22
+    is_resident: true
   output_variables:
-    eligible_for_pension: 1
+    eligible_for_pension: true
     pension_eligibility_age: 67
 
+- name: Must be a resident
+  period: 2018-01
+  input_variables:
+    pension_contributing_years: 22
+    is_resident: false
+  output_variables:
+    eligible_for_pension: false
+
+- name: Must contribute for 12 years
+  period: 2018-01
+  input_variables:
+    pension_contributing_years: 11
+    is_resident: true
+  output_variables:
+    eligible_for_pension: false
 
