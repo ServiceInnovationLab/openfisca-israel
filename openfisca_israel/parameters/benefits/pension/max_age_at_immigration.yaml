@@ -1,0 +1,17 @@
+description: Max age at time of immigration, to be eligible for persion
+metadata:
+  reference: https://github.com/ServiceInnovationLab/Piccolo/issues/4
+  unit: year
+
+woman:
+  description: "Pension eligibility age for women"
+  reference: https://www.btl.gov.il/English%20Homepage/Benefits/Old%20Age%20Insurance/Conditions/coveredinoldage/Pages/Woman.aspx
+  values:
+    2018-01-01:
+      value: 62
+man:
+  description: "Pension eligibility age for men"
+  reference: https://www.btl.gov.il/English%20Homepage/Benefits/Old%20Age%20Insurance/Conditions/coveredinoldage/Pages/Man.aspx
+  values:
+    2018-01-01:
+      value: 67

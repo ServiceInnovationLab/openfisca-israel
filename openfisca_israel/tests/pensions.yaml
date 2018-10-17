@@ -7,6 +7,7 @@
     gender: woman
     pension_contributing_years: 22
     is_resident: true
+    born_in_israel: true
   output_variables:
     eligible_for_pension: true
     pension_eligibility_age: 62
@@ -17,6 +18,7 @@
     gender: man
     pension_contributing_years: 22
     is_resident: true
+    born_in_israel: true
   output_variables:
     eligible_for_pension: true
     pension_eligibility_age: 67
@@ -24,16 +26,63 @@
 - name: Must be a resident
   period: 2018-01
   input_variables:
+    gender: man
     pension_contributing_years: 22
     is_resident: false
+    born_in_israel: true
   output_variables:
     eligible_for_pension: false
 
 - name: Must contribute for 12 years
   period: 2018-01
   input_variables:
+    gender: man
     pension_contributing_years: 11
     is_resident: true
+    born_in_israel: true
   output_variables:
     eligible_for_pension: false
 
+- name: Woman under 62 when immigrated
+  period: 2018-01
+  input_variables:
+    gender: woman
+    pension_contributing_years: 22
+    is_resident: true
+    born_in_israel: false
+    age_at_immigration: 50
+  output_variables:
+    eligible_for_pension: true
+
+- name: Woman over 62 when immigrated
+  period: 2018-01
+  input_variables:
+    gender: woman
+    pension_contributing_years: 22
+    is_resident: true
+    born_in_israel: false
+    age_at_immigration: 61
+  output_variables:
+    eligible_for_pension: true
+
+- name: Man under 62 when immigrated
+  period: 2018-01
+  input_variables:
+    gender: man
+    pension_contributing_years: 22
+    is_resident: true
+    born_in_israel: false
+    age_at_immigration: 50
+  output_variables:
+    eligible_for_pension: true
+
+- name: Man over 62 when immigrated
+  period: 2018-01
+  input_variables:
+    gender: man
+    pension_contributing_years: 22
+    is_resident: true
+    born_in_israel: false
+    age_at_immigration: 63
+  output_variables:
+    eligible_for_pension: true
