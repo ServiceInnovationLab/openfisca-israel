@@ -38,8 +38,8 @@ class age(Variable):
 
 class Genders(Enum):
     __order__ = "man woman unspecified"
-    woman = u'Woman'
     man = u'Man'
+    woman = u'Woman'
     unspecified = u'Unspecified'
 
 
