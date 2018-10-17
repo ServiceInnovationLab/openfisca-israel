@@ -1,5 +1,10 @@
 # Changelog
 
+### 4.0.0
+
+* Details
+  - Example Israel OpenFisca setup by Aotearoa New Zealand team
+
 ### 3.3.2
 
 * Minor change
