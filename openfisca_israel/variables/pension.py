@@ -18,10 +18,17 @@ class eligible_for_pension(Variable):
     reference = "https://github.com/ServiceInnovationLab/Piccolo/issues/4"
 
     def formula(person, period, parameters):
+        #
+        # One must have paid contributions for at least 12 years
         years_required = parameters(period).general.pension_contribution_years
         years_contributed = person('pension_contributing_years', period)
+        #
+        # Any Israeli resident born in Israel or who first immigrated
+        # before the age of 60-62 is eligible for an old age pension
+        # provided he or she meets the conditions of entitlement.
+        resident = person('is_resident', period)
 
-        return years_contributed >= years_required
+        return resident * (years_contributed >= years_required)
 
 
 class pension_eligibility_age(Variable):
