@@ -33,6 +33,24 @@ class age(Variable):
         birth_month = birth.astype('datetime64[M]').astype(int) % 12 + 1
         birth_day = (birth - birth.astype('datetime64[M]') + 1).astype(int)
 
-        is_birthday_past = (birth_month < period.start.month) + (birth_month == period.start.month) * (birth_day <= period.start.day)
+        is_birthday_past = (birth_month < period.start.month) + (birth_month ==
+                                                                 period.start.month) * (birth_day <= period.start.day)
 
-        return (period.start.year - birth_year) - where(is_birthday_past, 0, 1)  # If the birthday is not passed this year, subtract one year
+        # If the birthday is not passed this year, subtract one year
+        return (period.start.year - birth_year) - where(is_birthday_past, 0, 1)
+
+
+class gender(Variable):
+    value_type = Enum
+    possible_values = Gender
+    default_value = Gender.unspecified
+    entity = Person
+    definition_period = MONTH
+    label = u"A Person's gender"
+
+
+class Gender(Enum):
+    __order__ = "woman man"
+    woman = u'Woman'
+    man = u'Man'
+    unspecified = u'Unspecified'
