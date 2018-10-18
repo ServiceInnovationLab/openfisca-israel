@@ -38,7 +38,7 @@ class pension_eligibility_age(Variable):
     entity = Person
     definition_period = MONTH
     label = "Age of eligiblity for pension"
-    reference = "https://github.com/ServiceInnovationLab/Piccolo/issues/4"
+    reference = "https://www.btl.gov.il/English%20Homepage/Benefits/Old%20Age%20Insurance/Conditions/coveredinoldage/Pages/Woman.aspx"
 
     def formula(person, period, parameters):
         # One must have paid contributions for at least 12 years
