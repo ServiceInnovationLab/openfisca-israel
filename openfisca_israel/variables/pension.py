@@ -15,7 +15,7 @@ class eligible_for_pension(Variable):
     entity = Person
     definition_period = MONTH
     label = "Eligiblity for pension"
-    reference = "https://www.btl.gov.il/English%20Homepage/Benefits/Old%20Age%20Insurance/Conditions/coveredinoldage/Pages/Woman.aspx https://www.btl.gov.il/English%20Homepage/Benefits/Old%20Age%20Insurance/Conditions/coveredinoldage/Pages/Man.aspx" 
+    reference = "https://www.btl.gov.il/English%20Homepage/Benefits/Old%20Age%20Insurance/Conditions/coveredinoldage/Pages/Woman.aspx https://www.btl.gov.il/English%20Homepage/Benefits/Old%20Age%20Insurance/Conditions/coveredinoldage/Pages/Man.aspx"
 
     def formula(person, period, parameters):
         #
