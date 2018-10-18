@@ -54,7 +54,7 @@
   output_variables:
     eligible_for_pension: true
 
-- name: Woman over 62 when immigrated
+- name: Woman over 60 when immigrated
   period: 2018-01
   input_variables:
     gender: woman
@@ -63,7 +63,7 @@
     born_in_israel: false
     age_at_immigration: 61
   output_variables:
-    eligible_for_pension: true
+    eligible_for_pension: false
 
 - name: Man under 62 when immigrated
   period: 2018-01
@@ -85,4 +85,4 @@
     born_in_israel: false
     age_at_immigration: 63
   output_variables:
-    eligible_for_pension: true
+    eligible_for_pension: false
