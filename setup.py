@@ -20,7 +20,7 @@ setup(
         ],
     extras_require = {
         'dev': [
-            'flake8 >= 3.4.0, < 3.5.0',
+            'flake8 >=3.4.0,<3.8.0',
             'flake8-print',
             'nose',
             ]
